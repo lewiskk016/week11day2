@@ -56,7 +56,7 @@ Run all the tests now; everything should be green! You want to maintain that
 green as you refactor. It is recommended that you just leave the tests running
 in watch mode so it is easy to see if changes you make break the code.
 
-**WARNING**  
+**WARNING**
 In watch mode, Jest will run tests as soon as it recognizes that a change has
 been made. **This means that it will sometimes run a test before you finish
 making a change, raising the likelihood of false fails and, occasionally, false

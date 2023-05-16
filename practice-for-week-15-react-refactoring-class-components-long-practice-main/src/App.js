@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Clock, { ClockToggle } from './components/Clock';
 import Folder from './components/Folder';
 import Weather from './components/Weather';
@@ -21,16 +21,34 @@ const folders = [
   { title: 'three', content: 'Third folder here' }
 ];
 
-class App extends React.Component {
+function App() {
+    const [showClock, setShowClock ] = useState(true)
+
+    const toggleClock = e => {
+      e.preventDefault();
+
+      setShowClock((oldshowClock) => !showClock );
+    }
+
+
+    return (
+    <>
+    {showClock && <Clock />}
+    </>
+    )
+}
+
+
+class oldApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       showClock: true
     };
   }
-  
+
   toggleClock = () => this.setState({ showClock: !this.state.showClock });
-  
+
   render () {
     return (
       <div className="widgets">
